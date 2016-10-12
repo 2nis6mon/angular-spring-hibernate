@@ -8,7 +8,7 @@
 				$.getJSON('http://localhost:8080/api/person', null, function(data) {
     				$.each(data, function(index, element) {
         				$('#personList').append($('<li>', {
-            				text: person.name
+            				text: element.name
         				}));
     				});
 				});
@@ -19,7 +19,7 @@
 	</head>
 	<body>
 	
-		<div class="jumbotron">
+		<div>
 			<h1>Liste de personnes en base de donn&eacute;es :<h1>
 			<ul id="personList"></ul>
 		</div>
