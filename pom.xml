@@ -83,6 +83,13 @@
 			<version>${jackson.version}</version>
 		</dependency>
 
+		<!-- jstl for jsp -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
 		<!-- database -->
 		<dependency>
 			<groupId>mysql</groupId>

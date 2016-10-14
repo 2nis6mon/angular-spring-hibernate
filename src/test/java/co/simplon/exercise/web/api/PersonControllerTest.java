@@ -1,4 +1,4 @@
-package co.simplon.exercise.web;
+package co.simplon.exercise.web.api;
 
 public class PersonControllerTest {
 
