@@ -7,11 +7,11 @@
 </head>
 
 <body>
-	<form action="${loginUrl}" method="post" class="form-horizontal">
-		<input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
-		<input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
+	<form action="/login" method="post">
+		<input type="text"  name="username" placeholder="Enter Username">
+		<input type="password" name="password" placeholder="Enter Password">
 		<input type="hidden" name="${_csrf.parameterName}"  value="${_csrf.token}" />
-		<input type="submit"class="btn btn-block btn-primary btn-default" value="Log in">
+		<input type="submit" value="Log in">
 	</form>
 </body>
 </html>

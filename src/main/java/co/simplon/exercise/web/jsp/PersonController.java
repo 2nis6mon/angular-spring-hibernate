@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import co.simplon.exercise.core.model.Person;
-import co.simplon.exercise.core.service.PersonService;
+import co.simplon.exercise.core.service.business.PersonService;
 
 @Controller
 @RequestMapping("/person")
-public class PersonJspController {
+public class PersonController {
 
 	@Autowired
 	private PersonService personService;
@@ -23,13 +23,13 @@ public class PersonJspController {
 		return new ModelAndView("person", model);
 	}
 
-	@RequestMapping(path = "/addPerson")
+	@RequestMapping(path = "/add")
 	public ModelAndView addPerson(@RequestParam String name, @RequestParam String surname, ModelMap model) {
 		personService.addOrUpdate(new Person(name, surname));
 		return new ModelAndView("redirect:/person");
 	}
 
-	@RequestMapping(path = "/deletePerson")
+	@RequestMapping(path = "/delete")
 	public ModelAndView addPerson(@RequestParam Integer id, ModelMap model) {
 		personService.delete(id);
 		return new ModelAndView("redirect:/person");

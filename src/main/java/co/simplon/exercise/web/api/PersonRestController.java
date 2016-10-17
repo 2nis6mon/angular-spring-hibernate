@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.simplon.exercise.core.model.Person;
-import co.simplon.exercise.core.service.PersonService;
+import co.simplon.exercise.core.service.business.PersonService;
 
 @RestController
 @CrossOrigin
 @RequestMapping("/api/person")
-public class PersonController {
+public class PersonRestController {
 
 	@Autowired
 	private PersonService personService;

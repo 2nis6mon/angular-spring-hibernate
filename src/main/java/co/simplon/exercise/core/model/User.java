@@ -1,17 +1,22 @@
-package co.simplon.exercise.core.model.security;
+package co.simplon.exercise.core.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "user")
 public class User {
 
+    public enum Role {
+        USER, ADMIN
+    }
+
     @Id
     private String username;
 
     private String password;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     private boolean enabled;
 
@@ -19,9 +24,10 @@ public class User {
         // TODO for serialization
     }
 
-    public User(String username, String password, boolean enabled) {
+    public User(String username, String password, Role role, boolean enabled) {
         this.username = username;
         this.password = password;
+        this.role = role;
         this.enabled = enabled;
     }
 
@@ -29,23 +35,15 @@ public class User {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public String getPassword() {
         return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public boolean isEnabled() {
         return enabled;
     }
 
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
+    public Role getRole() {
+        return role;
     }
 }
