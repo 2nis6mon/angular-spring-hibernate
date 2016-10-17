@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,22 +22,4 @@ public class IndexController {
 		return new ModelAndView("redirect:/person");
 	}
 
-	@RequestMapping(path = "/login")
-	public ModelAndView loginForm(ModelMap model) {
-		return new ModelAndView("login");
-	}
-
-	@RequestMapping(value = "/logout")
-	public ModelAndView logoutPage(HttpServletRequest request, HttpServletResponse response) {
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		if (auth != null) {
-			new SecurityContextLogoutHandler().logout(request, response, auth);
-		}
-		return new ModelAndView("redirect:/login?logout");
-	}
-
-	@RequestMapping(value = "/accessDenied", method = RequestMethod.GET)
-	public String accessDeniedPage(ModelMap model) {
-		return "login?error";
-	}
 }

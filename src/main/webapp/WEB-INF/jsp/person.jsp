@@ -7,20 +7,20 @@
 
 	<body>
 		<h1>Persons :</h1>
-		<!--security:authorize access="isAuthenticated()" -->
+		<security:authorize access="isAuthenticated()">
 			<h2>Add a person :</h2>
-			<form action="/person/addPerson">
+			<form action="/person/add">
 				<input type="text" name="name" placeholder="name" />
 				<input type="text" name="surname" placeholder="surname" />
 				<input type="submit" value="Add" />
 			</form>
-		<!--/security:authorize-->
+		</security:authorize>
 		<h1>Persons in database :</h1>
 		<ul>
 			 <c:forEach items="${persons}" var="person">
 			 	<li>${person.id}&nbsp;:&nbsp;${person.name}&nbsp;${person.surname}
-					<security:authorize access="hasRole('ADMIN')">
-						&nbsp;<a href="/person/deletePerson?id=${person.id}">Delete</a>
+					<security:authorize access="hasAuthority('ADMIN')">
+						&nbsp;<a href="/person/delete?id=${person.id}">Delete</a>
 					</security:authorize>
 				</li>
 			 </c:forEach>
@@ -28,6 +28,12 @@
 		<br/>
 		<br/>
 		<br/>
-		<a href="/login">Login</a>
+		<security:authorize access="isAuthenticated()">
+			<form class="form-inline" action="/logout" method="post">
+				<input type="submit" value="Log out" />
+				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+			</form>
+		</security:authorize>
+		<br/>
 	</body>
 </html>
