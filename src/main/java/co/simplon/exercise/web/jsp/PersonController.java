@@ -20,7 +20,7 @@ public class PersonController {
 	@RequestMapping
 	public ModelAndView person(ModelMap model) {
 		model.addAttribute("persons", personService.getAll());
-		return new ModelAndView("person", model);
+		return new ModelAndView("jsp/person", model);
 	}
 
 	@RequestMapping(path = "/add")

@@ -6,7 +6,6 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,12 +16,12 @@ public class AuthenticationController {
 
     @RequestMapping(path = "/signin")
     public ModelAndView signin(ModelMap model) {
-        return new ModelAndView("signin");
+        return new ModelAndView("jsp/signin");
     }
 
     @RequestMapping(path = "/loginForm")
     public ModelAndView loginForm(ModelMap model) {
-        return new ModelAndView("loginForm");
+        return new ModelAndView("jsp/loginForm");
     }
 
     @RequestMapping(value = "/logout")
@@ -36,6 +35,6 @@ public class AuthenticationController {
 
     @RequestMapping(value = "/accessDenied")
     public String accessDeniedPage(ModelMap model) {
-        return "accessDenied";
+        return "jsp/accessDenied";
     }
 }

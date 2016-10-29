@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="myapp.users" template="/layouts/main.jsp">
+        <put-attribute name="title" value="Users" />
+        <put-attribute name="header" value="/tiles/header.jsp" />
+        <put-attribute name="body" value="/tiles/user.jsp" />
+        <put-attribute name="footer" value="/tiles/footer.jsp" />
+    </definition>
+    <definition name="myapp.loginForm" template="/layouts/main.jsp">
+        <put-attribute name="title" value="Users" />
+        <put-attribute name="header" value="/tiles/header.jsp" />
+        <put-attribute name="body" value="/tiles/loginForm.jsp" />
+        <put-attribute name="footer" value="/tiles/footer.jsp" />
+    </definition>
+    <definition name="myapp.person" template="/layouts/main.jsp">
+        <put-attribute name="title" value="Users" />
+        <put-attribute name="header" value="/tiles/header.jsp" />
+        <put-attribute name="body" value="/tiles/person.jsp" />
+        <put-attribute name="footer" value="/tiles/footer.jsp" />
+    </definition>
+    <definition name="myapp.signin" template="/layouts/main.jsp">
+        <put-attribute name="title" value="Users" />
+        <put-attribute name="header" value="/tiles/header.jsp" />
+        <put-attribute name="body" value="/tiles/signin.jsp" />
+        <put-attribute name="footer" value="/tiles/footer.jsp" />
+    </definition>
+    <definition name="myapp.accessDenied" template="/layouts/main.jsp">
+        <put-attribute name="title" value="Users" />
+        <put-attribute name="header" value="/tiles/header.jsp" />
+        <put-attribute name="body" value="/tiles/accessDenied.jsp" />
+        <put-attribute name="footer" value="/tiles/footer.jsp" />
+    </definition>
+</tiles-definitions>

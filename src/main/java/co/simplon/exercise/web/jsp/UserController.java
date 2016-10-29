@@ -19,7 +19,7 @@ public class UserController {
     @RequestMapping
     public ModelAndView user(ModelMap model) {
         model.addAttribute("users", userService.getAll());
-        return new ModelAndView("user");
+        return new ModelAndView("jsp/user");
     }
 
     @RequestMapping(path = "/add/user")
@@ -30,6 +30,7 @@ public class UserController {
     @RequestMapping(path = "/add")
     public ModelAndView add(@RequestParam String username, @RequestParam String password, @RequestParam User.Role role, ModelMap model) {
         userService.addOrUpdateUserAndRoles(username, password, true, role);
+
         return new ModelAndView("redirect:/user");
     }
     @RequestMapping(path = "/delete")

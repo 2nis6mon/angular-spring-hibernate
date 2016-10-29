@@ -45,4 +45,21 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
+	<!-- Tiles Listener for jsp templates -->
+	<servlet>
+		<servlet-name>tilesDispatchServlet</servlet-name>
+		<servlet-class>org.apache.tiles.web.util.TilesDispatchServlet</servlet-class>
+	</servlet>
+	<listener>
+		<listener-class>org.apache.tiles.extras.complete.CompleteAutoloadTilesListener</listener-class>
+	</listener>
+	<context-param>
+	<param-name>
+		org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG
+	</param-name>
+	<param-value>
+		/WEB-INF/tiles.xml,/org/apache/tiles/classpath-defs.xml
+	</param-value>
+</context-param>
+
 </web-app>
