@@ -6,7 +6,7 @@
 
     <http auto-config="true"  >
         <intercept-url pattern="/user" access="hasAuthority('ADMIN')" />
-        <intercept-url pattern="/user/add/user" access="isAuthenticated" />
+        <intercept-url pattern="/user/add/user" access="permitAll" />
         <intercept-url pattern="/person/add" access="isAuthenticated" />
         <intercept-url pattern="/person/delete" access="hasAuthority('ADMIN')" />
         <intercept-url pattern="/**" access="permitAll" />
@@ -17,8 +17,18 @@
         <csrf/>
     </http>
 
-    <authentication-manager >
-        <authentication-provider user-service-ref="customLoginService"/>
+    <authentication-manager>
+        <authentication-provider ref="daoAuthenticationProvider" />
     </authentication-manager>
+
+    <beans:bean class="org.springframework.security.authentication.dao.DaoAuthenticationProvider" id="daoAuthenticationProvider">
+        <beans:property name="userDetailsService" ref="customLoginService" />
+        <beans:property name="passwordEncoder" ref="passwordEncoder" />
+    </beans:bean>
+
+    <beans:bean class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" id="passwordEncoder" >
+        <beans:constructor-arg value="11"/>
+    </beans:bean>
+
 
 </beans:beans>
