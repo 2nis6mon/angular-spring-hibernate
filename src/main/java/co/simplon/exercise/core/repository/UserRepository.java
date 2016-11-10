@@ -9,5 +9,4 @@ import javax.annotation.Resource;
 @Resource
 public interface UserRepository extends JpaRepository<User, String> {
 
-@Query
 }

@@ -14,14 +14,20 @@
 
 	<mvc:annotation-driven />
 
-	<mvc:resources location="/content/" mapping="/**"></mvc:resources>
+	<mvc:resources location="/WEB-INF/content/" mapping="/content/**" />
 
-	<bean id="viewResolver"
-		  class="org.springframework.web.servlet.view.UrlBasedViewResolver">
-		<property name="viewClass"
-				  value="org.springframework.web.servlet.view.JstlView" />
-		<property name="prefix" value="/" />
-		<property name="suffix" value=".jsp" />
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.tiles3.TilesView</value>
+		</property>
+	</bean>
+
+	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles.xml</value>
+			</list>
+		</property>
 	</bean>
 
 </beans>

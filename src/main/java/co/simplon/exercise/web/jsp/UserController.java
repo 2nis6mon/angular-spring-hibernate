@@ -19,7 +19,7 @@ public class UserController {
     @RequestMapping
     public ModelAndView user(ModelMap model) {
         model.addAttribute("users", userService.getAll());
-        return new ModelAndView("jsp/user");
+        return new ModelAndView("user");
     }
 
     @RequestMapping(path = "/add/user")

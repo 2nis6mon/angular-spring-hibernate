@@ -14,14 +14,14 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class AuthenticationController {
 
-    @RequestMapping(path = "/signin")
+    @RequestMapping(path = "/signup")
     public ModelAndView signin(ModelMap model) {
-        return new ModelAndView("jsp/signin");
+        return new ModelAndView("signup");
     }
 
     @RequestMapping(path = "/loginForm")
     public ModelAndView loginForm(ModelMap model) {
-        return new ModelAndView("jsp/loginForm");
+        return new ModelAndView("loginForm");
     }
 
     @RequestMapping(value = "/logout")
@@ -34,7 +34,7 @@ public class AuthenticationController {
     }
 
     @RequestMapping(value = "/accessDenied")
-    public String accessDeniedPage(ModelMap model) {
-        return "jsp/accessDenied";
+    public ModelAndView accessDeniedPage(ModelMap model) {
+        return new ModelAndView("accessDenied");
     }
 }
