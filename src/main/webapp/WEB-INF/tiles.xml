@@ -3,34 +3,34 @@
         "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
         "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
-    <definition name="users" template="/WEB-INF/content/layouts/main.jsp">
+    <definition name="user" template="/WEB-INF/content/layouts/main.jsp">
         <put-attribute name="title" value="Users" />
-        <put-attribute name="header" value="/WEB-INF/content/tiles/header.jsp" />
+        <put-attribute name="header" value="/WEB-INF/content/common/header.jsp" />
         <put-attribute name="body" value="/WEB-INF/content/tiles/user.jsp" />
-        <put-attribute name="footer" value="/WEB-INF/content/tiles/footer.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/content/common/footer.jsp" />
     </definition>
     <definition name="loginForm" template="/WEB-INF/content/layouts/main.jsp">
-        <put-attribute name="title" value="Users" />
-        <put-attribute name="header" value="/WEB-INF/content/tiles/header.jsp" />
+        <put-attribute name="title" value="Sign in" />
+        <put-attribute name="header" value="/WEB-INF/content/common/header.jsp" />
         <put-attribute name="body" value="/WEB-INF/content/tiles/loginForm.jsp" />
-        <put-attribute name="footer" value="/WEB-INF/content/tiles/footer.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/content/common/footer.jsp" />
     </definition>
     <definition name="person" template="/WEB-INF/content/layouts/main.jsp">
-        <put-attribute name="title" value="Users" />
-        <put-attribute name="header" value="/WEB-INF/content/tiles/header.jsp" />
+        <put-attribute name="title" value="Persons" />
+        <put-attribute name="header" value="/WEB-INF/content/common/header.jsp" />
         <put-attribute name="body" value="/WEB-INF/content/tiles/person.jsp" />
-        <put-attribute name="footer" value="/WEB-INF/content/tiles/footer.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/content/common/footer.jsp" />
     </definition>
-    <definition name="signin" template="/WEB-INF/content/layouts/main.jsp">
-        <put-attribute name="title" value="Users" />
-        <put-attribute name="header" value="/WEB-INF/content/tiles/header.jsp" />
-        <put-attribute name="body" value="/WEB-INF/content/tiles/signin.jsp" />
-        <put-attribute name="footer" value="/WEB-INF/content/tiles/footer.jsp" />
+    <definition name="signup" template="/WEB-INF/content/layouts/main.jsp">
+        <put-attribute name="title" value="Sing up" />
+        <put-attribute name="header" value="/WEB-INF/content/common/header.jsp" />
+        <put-attribute name="body" value="/WEB-INF/content/tiles/signup.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/content/common/footer.jsp" />
     </definition>
     <definition name="accessDenied" template="/WEB-INF/content/layouts/main.jsp">
-        <put-attribute name="title" value="Users" />
-        <put-attribute name="header" value="/WEB-INF/content/tiles/header.jsp" />
+        <put-attribute name="title" value="Access Denied" />
+        <put-attribute name="header" value="/WEB-INF/content/common/header.jsp" />
         <put-attribute name="body" value="/WEB-INF/content/tiles/accessDenied.jsp" />
-        <put-attribute name="footer" value="/WEB-INF/content/tiles/footer.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/content/common/footer.jsp" />
     </definition>
 </tiles-definitions>
